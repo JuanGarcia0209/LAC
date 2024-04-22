@@ -43,7 +43,6 @@ public class LoginLAC extends javax.swing.JFrame {
         jLabel2.setText("Ingrese su numero de identificacion");
 
         TxtcomprobarIdentificacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        TxtcomprobarIdentificacion.setText("Digite aqui");
         TxtcomprobarIdentificacion.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         ButtonAceptar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
