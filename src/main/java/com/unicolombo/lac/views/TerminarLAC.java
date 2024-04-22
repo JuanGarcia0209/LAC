@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package VentanaPrincipalLAC;
+package main.java.com.unicolombo.lac.views;
 
 /**
  *
@@ -15,6 +15,7 @@ public class TerminarLAC extends javax.swing.JFrame {
      */
     public TerminarLAC() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -38,7 +39,7 @@ public class TerminarLAC extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Algerian", 1, 24)); // NOI18N
         jLabel1.setText("Gracias por formular su asistencia");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosLAC/emoticono.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/java/com/unicolombo/lac/images/emoticono.jpg"))); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Algerian", 1, 18)); // NOI18N
         jLabel3.setText("Siempre a tu servicio....vuelva pronto");
@@ -70,7 +71,7 @@ public class TerminarLAC extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(30, 30, 30)
                 .addComponent(jLabel3)
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

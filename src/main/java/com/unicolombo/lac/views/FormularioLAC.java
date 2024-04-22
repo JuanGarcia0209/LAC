@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package VentanaPrincipalLAC;
+package main.java.com.unicolombo.lac.views;
 
 /**
  *
@@ -15,6 +15,7 @@ public class FormularioLAC extends javax.swing.JFrame {
      */
     public FormularioLAC() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -49,7 +50,7 @@ public class FormularioLAC extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 255, 255));
         jPanel1.setForeground(new java.awt.Color(51, 51, 51));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosLAC/}hhh.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/java/com/unicolombo/lac/images/}hhh.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Algerian", 1, 24)); // NOI18N
         jLabel2.setText("FORMULARIO DE ASISTENCIA");
@@ -200,7 +201,7 @@ public class FormularioLAC extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonRegresarFormularioActionPerformed
 
     private void buttonCancelarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarFormularioActionPerformed
-    LAC cancelarInicio = new LAC();
+    Welcome cancelarInicio = new Welcome();
     cancelarInicio.setVisible(true);
     this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_buttonCancelarFormularioActionPerformed

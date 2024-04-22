@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package VentanaPrincipalLAC;
+package main.java.com.unicolombo.lac.views;
 
 /**
  *
@@ -15,6 +15,7 @@ public class RegistroLAC extends javax.swing.JFrame {
      */
     public RegistroLAC() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -53,7 +54,7 @@ public class RegistroLAC extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 255, 255));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconosLAC/registro.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/java/com/unicolombo/lac/images/registro.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Algerian", 1, 24)); // NOI18N
         jLabel2.setText("REGISTRO DE ASISTENCIAS");
@@ -239,7 +240,7 @@ public class RegistroLAC extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonAceptarRegistroActionPerformed
 
     private void ButtonCancelarRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelarRegistroActionPerformed
-    LAC cancelar = new LAC();
+    Welcome cancelar = new Welcome();
     cancelar.setVisible(true);
     this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_ButtonCancelarRegistroActionPerformed
