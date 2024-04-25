@@ -35,6 +35,7 @@ public class Welcome extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Library Access Control");
         setBackground(new java.awt.Color(153, 0, 0));
 
         btnEntrar.setText("Entrar");
@@ -49,7 +50,7 @@ public class Welcome extends javax.swing.JFrame {
         jLabel2.setText("BIENVENIDO");
 
         jLabel3.setFont(new java.awt.Font("Algerian", 1, 36)); // NOI18N
-        jLabel3.setText("L  A C");
+        jLabel3.setText("L.A.C");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -116,9 +117,9 @@ public class Welcome extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-    LoginLAC entrar = new LoginLAC();
-    entrar.setVisible(true);
-    this.dispose();// TODO add your handling code here:
+        LoginLAC entrar = new LoginLAC();
+        entrar.setVisible(true);
+        this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     /**

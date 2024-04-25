@@ -4,12 +4,22 @@
  */
 package main.java.com.unicolombo.lac.views;
 
+import java.time.LocalDateTime;
+import javax.swing.DefaultComboBoxModel;
+import main.java.com.unicolombo.lac.main.Main;
+import main.java.com.unicolombo.lac.models.Answer;
+import main.java.com.unicolombo.lac.models.DB;
+import main.java.com.unicolombo.lac.models.User;
+
 /**
  *
  * @author 57301
  */
 public class FormularioLAC extends javax.swing.JFrame {
-
+    static DB db = Main.db;
+    static Answer answer = new Answer();
+    static DefaultComboBoxModel<String> modeloFinalities = new DefaultComboBoxModel<>();
+    static User user = Main.user;
     /**
      * Creates new form FormularioLAC
      */
@@ -33,6 +43,9 @@ public class FormularioLAC extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        for (String finality : db.finalities) {
+            modeloFinalities.addElement(finality);
+        }
         cbxFinalidadFormulario = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -46,6 +59,7 @@ public class FormularioLAC extends javax.swing.JFrame {
         jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Library Access Control");
 
         jPanel1.setBackground(new java.awt.Color(0, 255, 255));
         jPanel1.setForeground(new java.awt.Color(51, 51, 51));
@@ -55,7 +69,7 @@ public class FormularioLAC extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Algerian", 1, 24)); // NOI18N
         jLabel2.setText("FORMULARIO DE ASISTENCIA");
 
-        cbxFinalidadFormulario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Uso de computador", "Sala de estudio", "Leer", "Esperar", "Otro" }));
+        cbxFinalidadFormulario.setModel(modeloFinalities);
         cbxFinalidadFormulario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         cbxFinalidadFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,6 +109,7 @@ public class FormularioLAC extends javax.swing.JFrame {
         });
 
         buttonGroup2.add(jRadioButton2);
+        jRadioButton2.setSelected(true);
         jRadioButton2.setText("No");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,6 +118,9 @@ public class FormularioLAC extends javax.swing.JFrame {
         });
 
         ButtonRegresarFormulario.setText("Regresar");
+        if(user != null){
+            ButtonRegresarFormulario.setVisible(false);
+        }
         ButtonRegresarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonRegresarFormularioActionPerformed(evt);
@@ -195,21 +213,34 @@ public class FormularioLAC extends javax.swing.JFrame {
     }//GEN-LAST:event_cbxFinalidadFormularioActionPerformed
 
     private void ButtonRegresarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegresarFormularioActionPerformed
-    RegistroLAC regresar = new RegistroLAC();
-    regresar.setVisible(true);
-    this.dispose();// TODO add your handling code here:
+        RegistroLAC regresar = new RegistroLAC();
+        regresar.setVisible(true);
+        this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_ButtonRegresarFormularioActionPerformed
 
     private void buttonCancelarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCancelarFormularioActionPerformed
-    Welcome cancelarInicio = new Welcome();
-    cancelarInicio.setVisible(true);
-    this.dispose();// TODO add your handling code here:
+        Welcome cancelarInicio = new Welcome();
+        cancelarInicio.setVisible(true);
+        this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_buttonCancelarFormularioActionPerformed
 
     private void buttonAceptarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAceptarFormularioActionPerformed
-    TerminarLAC aceptar = new TerminarLAC();
-    aceptar.setVisible(true);
-    this.dispose();// TODO add your handling code here:
+        answer.id = (db.answers.size() + 1);
+        answer.id_user = Main.user.id;
+        
+        for (int i = 0; i < db.finalities.length; i++) {
+            if (cbxFinalidadFormulario.getModel().equals(db.finalities[i])) {
+                answer.id_finality = i;
+            }
+        }
+        
+        answer.created_at = LocalDateTime.now();
+        
+        db.answers.add(answer);
+        
+        TerminarLAC aceptar = new TerminarLAC();
+        aceptar.setVisible(true);
+        this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_buttonAceptarFormularioActionPerformed
 
     /**

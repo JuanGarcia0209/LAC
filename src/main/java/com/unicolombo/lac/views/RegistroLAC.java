@@ -4,11 +4,22 @@
  */
 package main.java.com.unicolombo.lac.views;
 
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+import main.java.com.unicolombo.lac.main.Main;
+import main.java.com.unicolombo.lac.models.DB;
+import main.java.com.unicolombo.lac.models.User;
+
 /**
  *
  * @author 57301
  */
 public class RegistroLAC extends javax.swing.JFrame {
+    static DB db = Main.db;
+    static User user = Main.user;
+    static DefaultComboBoxModel<String> modeloRoles = new DefaultComboBoxModel<>();
+    static DefaultComboBoxModel<String> modeloDepartments = new DefaultComboBoxModel<>();
+    static DefaultComboBoxModel<String> modeloMajors = new DefaultComboBoxModel<>();
 
     /**
      * Creates new form regristroLAC
@@ -41,8 +52,17 @@ public class RegistroLAC extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        for (String rol : db.roles) {
+            modeloRoles.addElement(rol);
+        }
         cbxRolRegistro = new javax.swing.JComboBox<>();
+        for (String department : db.departments) {
+            modeloDepartments.addElement(department);
+        }
         cbxInstitucionRegistro = new javax.swing.JComboBox<>();
+        for (String major : db.majors) {
+            modeloMajors.addElement(major);
+        }
         cbxCarreraRegistro = new javax.swing.JComboBox<>();
         jSeparator1 = new javax.swing.JSeparator();
         ButtonAceptarRegistro = new javax.swing.JButton();
@@ -51,6 +71,7 @@ public class RegistroLAC extends javax.swing.JFrame {
         jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Library Access Control");
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -68,7 +89,10 @@ public class RegistroLAC extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Apellidos");
 
+        txtDocuemtoRegistro.setEditable(false);
+        txtDocuemtoRegistro.setText(Main.user.document + "");
         txtDocuemtoRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtDocuemtoRegistro.setFocusable(false);
 
         txtNombresRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -88,7 +112,7 @@ public class RegistroLAC extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setText("Carrera");
 
-        cbxRolRegistro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Estudiante", "Docente", "Administrativo" }));
+        cbxRolRegistro.setModel(modeloRoles);
         cbxRolRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         cbxRolRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,10 +120,10 @@ public class RegistroLAC extends javax.swing.JFrame {
             }
         });
 
-        cbxInstitucionRegistro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Colombo", "Unicolombo", "Otro" }));
+        cbxInstitucionRegistro.setModel(modeloDepartments);
         cbxInstitucionRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        cbxCarreraRegistro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Licenciatura En Bilingüismo Con Enfasis En Inglés", "Contaduría Pública", "Administración De Empresas", "Derecho", "Ingenieria Industrial", "Ingeniería De Sistemas", "Administración De Empresas Turisticas Y Hoteleras", "Tecnologia En Sistemas De Gestión De C", "Tecnologia En Desarrollo De Sistemas De Información Y De Software", "Tecnologia En Gestión De Servicios Turisticos Y Hoteleros", "Especialización en Enseñanza del Idioma ingles", "Curso de creación de contenido de redes sociales", "Diplomado en Justicia Digital", "Diplomando Full Stack Diplomado en Actualización Tributaria en Conciliación Extrajudicial", "Diplomado en logistica y suministro", "Diplomando Gestión Estratégica de Negocio", "\"No aplica\"" }));
+        cbxCarreraRegistro.setModel(modeloMajors);
         cbxCarreraRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jSeparator1.setForeground(new java.awt.Color(102, 102, 102));
@@ -161,7 +185,7 @@ public class RegistroLAC extends javax.swing.JFrame {
                                     .addComponent(cbxCarreraRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel9)))))
                     .addComponent(jLabel6))
-                .addGap(20, 34, Short.MAX_VALUE))
+                .addGap(20, 73, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,15 +258,49 @@ public class RegistroLAC extends javax.swing.JFrame {
     }//GEN-LAST:event_cbxRolRegistroActionPerformed
 
     private void ButtonAceptarRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAceptarRegistroActionPerformed
-    FormularioLAC junior = new FormularioLAC();
-    junior.setVisible(true);
-    this.dispose();// TODO add your handling code here:
+        if (txtNombresRegistro.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "El campo nombre no puede estar vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        if (txtApellidosRegistro.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "El campo apellidos no puede estar vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        user.id = (db.users.size() + 1);
+        user.name = txtNombresRegistro.getText();
+        user.lastName = txtApellidosRegistro.getText();
+        
+        for (int i = 0; i < db.roles.length; i++) {
+            if (cbxRolRegistro.getModel().equals(db.roles[i])) {
+                user.id_rol = i;
+            }
+        }
+        
+        for (int i = 0; i < db.majors.length; i++) {
+            if (cbxCarreraRegistro.getModel().equals(db.majors[i])) {
+                user.id_major = i;
+            }
+        }
+        
+        for (int i = 0; i < db.departments.length; i++) {
+            if (cbxInstitucionRegistro.getModel().equals(db.departments[i])) {
+                user.id_department = i;
+            }
+        }
+        
+        db.users.add(user);
+        
+        FormularioLAC junior = new FormularioLAC();
+        junior.setVisible(true);
+        this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_ButtonAceptarRegistroActionPerformed
 
     private void ButtonCancelarRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelarRegistroActionPerformed
-    Welcome cancelar = new Welcome();
-    cancelar.setVisible(true);
-    this.dispose();// TODO add your handling code here:
+        Welcome cancelar = new Welcome();
+        cancelar.setVisible(true);
+        this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_ButtonCancelarRegistroActionPerformed
 
     /**
@@ -274,7 +332,7 @@ public class RegistroLAC extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

@@ -4,6 +4,8 @@
  */
 package main.java.com.unicolombo.lac.views;
 
+import java.util.Timer;
+import java.util.TimerTask;
 /**
  *
  * @author 57301
@@ -16,6 +18,18 @@ public class TerminarLAC extends javax.swing.JFrame {
     public TerminarLAC() {
         initComponents();
         this.setLocationRelativeTo(null);
+        TerminarLAC view = this;
+        
+        Timer timer = new Timer(); // Creating a Timer object from the timer class
+
+        TimerTask task1 = new TimerTask() {
+            public void run() {
+                Welcome vv = new Welcome();
+                vv.setVisible(true);
+                view.dispose();
+            }
+        };
+        timer.schedule(task1, 5000);
     }
 
     /**
@@ -33,6 +47,7 @@ public class TerminarLAC extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Library Access Control");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 

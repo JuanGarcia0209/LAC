@@ -4,12 +4,20 @@
  */
 package main.java.com.unicolombo.lac.views;
 
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import main.java.com.unicolombo.lac.main.Main;
+import main.java.com.unicolombo.lac.models.DB;
+import main.java.com.unicolombo.lac.models.User;
+
 /**
  *
  * @author 57301
  */
 public class LoginLAC extends javax.swing.JFrame {
 
+    static DB db = Main.db;
+    
     /**
      * Creates new form LoginLAC
      */
@@ -34,6 +42,7 @@ public class LoginLAC extends javax.swing.JFrame {
         ButtonAceptar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Library Access Control");
 
         jPanel1.setBackground(new java.awt.Color(0, 255, 255));
 
@@ -108,9 +117,40 @@ public class LoginLAC extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAceptarActionPerformed
-    RegistroLAC vv = new RegistroLAC();
-    vv.setVisible(true);
-    this.dispose();// TODO add your handling code here:
+        if (TxtcomprobarIdentificacion.getText().isEmpty()
+                || validateNumbers(TxtcomprobarIdentificacion.getText()) == false
+                || TxtcomprobarIdentificacion.getText().length() > 10) {
+            JOptionPane.showMessageDialog(null, "El campo debe contener al menos 10 números.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        int document = Integer.parseInt(TxtcomprobarIdentificacion.getText());
+
+        User foundUser = findUserByDocument(document);
+
+        if (foundUser != null) {
+            Main.user = foundUser;
+            FormularioLAC vv = new FormularioLAC();
+            vv.setVisible(true);
+            this.dispose();
+        } else {
+            String[] opciones = {"Aceptar", "Cancelar"};
+            
+            int respuesta = JOptionPane.showOptionDialog(null, "La identificación ingresada no se encuentra registrada. ¿Deseas registrarla?", "Registrar usuario",
+                JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, opciones[0]);
+            
+            if (respuesta == JOptionPane.YES_OPTION) {
+                Main.user.document = document;
+                RegistroLAC vv = new RegistroLAC();
+                vv.setVisible(true);
+                this.dispose();
+            }else{
+                Welcome vv = new Welcome();
+                vv.setVisible(true);
+                this.dispose();
+            }
+        } 
+           
     }//GEN-LAST:event_ButtonAceptarActionPerformed
 
     /**
@@ -147,6 +187,25 @@ public class LoginLAC extends javax.swing.JFrame {
                 new LoginLAC().setVisible(true);
             }
         });
+    }
+    
+    // Método para buscar un usuario por su número de documento
+    public static User findUserByDocument(int document) {
+        for (User user : db.users) {
+            if (user.document == document) {
+                return user;
+            }
+        }
+        return null;
+    }
+    
+    private static boolean validateNumbers(String cadena) {
+        for (char caracter : cadena.toCharArray()) {
+            if (!Character.isDigit(caracter)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

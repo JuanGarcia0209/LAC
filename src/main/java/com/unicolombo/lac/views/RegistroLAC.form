@@ -10,6 +10,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="Library Access Control"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -102,7 +103,7 @@
                       </Group>
                       <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="20" pref="34" max="32767" attributes="0"/>
+                  <EmptySpace min="20" pref="73" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -206,11 +207,16 @@
         </Component>
         <Component class="javax.swing.JTextField" name="txtDocuemtoRegistro">
           <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="Main.user.document + &quot;&quot;" type="code"/>
+            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
               </Border>
             </Property>
+            <Property name="focusable" type="boolean" value="false"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNombresRegistro">
@@ -262,13 +268,8 @@
         </Component>
         <Component class="javax.swing.JComboBox" name="cbxRolRegistro">
           <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Seleccione"/>
-                <StringItem index="1" value="Estudiante"/>
-                <StringItem index="2" value="Docente"/>
-                <StringItem index="3" value="Administrativo"/>
-              </StringArray>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="modeloRoles" type="code"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
@@ -280,18 +281,14 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxRolRegistroActionPerformed"/>
           </Events>
           <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="for (String rol : db.roles) {&#xa;    modeloRoles.addElement(rol);&#xa;}"/>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JComboBox" name="cbxInstitucionRegistro">
           <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Seleccione"/>
-                <StringItem index="1" value="Colombo"/>
-                <StringItem index="2" value="Unicolombo"/>
-                <StringItem index="3" value="Otro"/>
-              </StringArray>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="modeloDepartments" type="code"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
@@ -300,32 +297,14 @@
             </Property>
           </Properties>
           <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="for (String department : db.departments) {&#xa;    modeloDepartments.addElement(department);&#xa;}"/>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JComboBox" name="cbxCarreraRegistro">
           <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="18">
-                <StringItem index="0" value="Seleccione"/>
-                <StringItem index="1" value="Licenciatura En Biling&#xfc;ismo Con Enfasis En Ingl&#xe9;s"/>
-                <StringItem index="2" value="Contadur&#xed;a P&#xfa;blica"/>
-                <StringItem index="3" value="Administraci&#xf3;n De Empresas"/>
-                <StringItem index="4" value="Derecho"/>
-                <StringItem index="5" value="Ingenieria Industrial"/>
-                <StringItem index="6" value="Ingenier&#xed;a De Sistemas"/>
-                <StringItem index="7" value="Administraci&#xf3;n De Empresas Turisticas Y Hoteleras"/>
-                <StringItem index="8" value="Tecnologia En Sistemas De Gesti&#xf3;n De C"/>
-                <StringItem index="9" value="Tecnologia En Desarrollo De Sistemas De Informaci&#xf3;n Y De Software"/>
-                <StringItem index="10" value="Tecnologia En Gesti&#xf3;n De Servicios Turisticos Y Hoteleros"/>
-                <StringItem index="11" value="Especializaci&#xf3;n en Ense&#xf1;anza del Idioma ingles"/>
-                <StringItem index="12" value="Curso de creaci&#xf3;n de contenido de redes sociales"/>
-                <StringItem index="13" value="Diplomado en Justicia Digital"/>
-                <StringItem index="14" value="Diplomando Full Stack Diplomado en Actualizaci&#xf3;n Tributaria en Conciliaci&#xf3;n Extrajudicial"/>
-                <StringItem index="15" value="Diplomado en logistica y suministro"/>
-                <StringItem index="16" value="Diplomando Gesti&#xf3;n Estrat&#xe9;gica de Negocio"/>
-                <StringItem index="17" value="&quot;No aplica&quot;"/>
-              </StringArray>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="modeloMajors" type="code"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
@@ -334,6 +313,7 @@
             </Property>
           </Properties>
           <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="for (String major : db.majors) {&#xa;    modeloMajors.addElement(major);&#xa;}"/>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
