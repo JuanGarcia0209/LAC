@@ -4,7 +4,7 @@
 
 # Library Access Control (L.A.C)
 
-Proyecto de aula destinado a un público general para la gestión y el almacenamiento de su asistencia, enfocado en la biblioteca de la biblioteca de la Fundación Universitaria Colombo Internacional Unicolombo.
+Proyecto de aula destinado a un público general para la gestión y el almacenamiento de su asistencia, enfocado en la biblioteca de la Fundación Universitaria Colombo Internacional UNICOLOMBO.
 
 <!-- TABLE OF CONTENTS -->
 ## Tabla de contenidos
@@ -23,7 +23,7 @@ Proyecto de aula destinado a un público general para la gestión y el almacenam
 
 ## Run Locally
 
-Para ejecutar este proyecto debe seguir los siguientes pasos:
+Para ejecutar este proyecto de forma local debe seguir los siguientes pasos:
 
 Paso 1: Clone el repositorio.
 ```bash
@@ -48,14 +48,17 @@ Paso 3: Compile y ejecute el proyecto.
 
 - Nuevos logos agregados.
 
-- Actualización de README
+- README agregado.
+
+- Actualización de README.
 
 
 ## Lessons Learned
 
 Durante el desarrollo de este proyecto se adquirieron las siguientes habilidades:
 
-* git (clonar, crear y manipular ramas, subir un repositorio a GitHub).
+* Git/GitHub (clonar, crear y manipular ramas, subir un repositorio a GitHub).
+* Java (tipos de variables y sus métodos, creación y manipulación de objetos).
 * Netbeans (creación, compilación y ejecución de proyectos Java).
 * GUI - JFrame (creación, manipulación y configuración de interfaces gráficas).
 
@@ -93,7 +96,7 @@ La versión de consola estará habilitada a principios del mes de Mayo en la ram
 
 ## Badges
 
-[![Java License](https://img.shields.io/badge/License-Java-green.svg)](#)
+[![Java License](https://img.shields.io/badge/License-Java-red.svg)](#)
 [![Maven License](https://img.shields.io/badge/License-Maven-yellow.svg)](#)
 [![Unicolombo License](https://img.shields.io/badge/License-Unicolombo-blue.svg)](#)
 
