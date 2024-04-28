@@ -6,7 +6,20 @@
 
 Proyecto de aula destinado a un público general para la gestión y el almacenamiento de su asistencia, enfocado en la biblioteca de la biblioteca de la Fundación Universitaria Colombo Internacional Unicolombo.
 
-
+<!-- TABLE OF CONTENTS -->
+## Tabla de contenidos
+  <ol>
+    <li><a href="#run-locally">Run Locally</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#lessons-learned">Lessons learned.</a></li>
+    <li><a href="#tech-stack">Tech Stacks</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#documentation">Documentation</a></li>
+    <li><a href="#authors">Authors</a></li>
+    <li><a href="#badges">Badges</a></li>
+    <li><a href="#relates">Relates</a></li>
+  </ol>
+</details>
 
 ## Run Locally
 
@@ -90,8 +103,8 @@ La versión de consola estará habilitada a principios del mes de Mayo en la ram
 
 Estas son algunas de mis otras actividades:
 
-[Ejercicios GUI](https://github.com/matiassingers/awesome-readme)
+[Ejercicios GUI](https://github.com/JuanGarcia0209/GUI)
 
-[Ejercicios Java](https://github.com/matiassingers/awesome-readme)
+[Ejercicios Java](https://github.com/JuanGarcia0209/ejercicios-java)
 
 
