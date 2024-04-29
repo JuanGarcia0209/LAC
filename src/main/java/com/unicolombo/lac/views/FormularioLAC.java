@@ -10,22 +10,31 @@ import main.java.com.unicolombo.lac.main.Main;
 import main.java.com.unicolombo.lac.models.Answer;
 import main.java.com.unicolombo.lac.models.DB;
 import main.java.com.unicolombo.lac.models.User;
+import java.util.ArrayList;
 
 /**
  *
  * @author 57301
  */
 public class FormularioLAC extends javax.swing.JFrame {
-    static DB db = Main.db;
+    //static DB db = Main.db;
     static Answer answer = new Answer();
     static DefaultComboBoxModel<String> modeloFinalities = new DefaultComboBoxModel<>();
-    static User user = Main.user;
+    //static User user = Main.user;
     /**
      * Creates new form FormularioLAC
      */
     public FormularioLAC() {
+        for (String finality : Main.db.finalities) {
+            modeloFinalities.addElement(finality);
+        }
         initComponents();
         this.setLocationRelativeTo(null);
+        modeloFinalities = new DefaultComboBoxModel<>();
+        
+        //if(Main.user != null){
+            ButtonRegresarFormulario.setVisible(false);
+        //}
     }
 
     /**
@@ -43,9 +52,6 @@ public class FormularioLAC extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        for (String finality : db.finalities) {
-            modeloFinalities.addElement(finality);
-        }
         cbxFinalidadFormulario = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -120,9 +126,6 @@ public class FormularioLAC extends javax.swing.JFrame {
         });
 
         ButtonRegresarFormulario.setText("Regresar");
-        if(user != null){
-            ButtonRegresarFormulario.setVisible(false);
-        }
         ButtonRegresarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonRegresarFormularioActionPerformed(evt);
@@ -236,18 +239,22 @@ public class FormularioLAC extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonCancelarFormularioActionPerformed
 
     private void buttonAceptarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAceptarFormularioActionPerformed
-        answer.id = (db.answers.size() + 1);
+        answer.id = (Main.db.answers.size() + 1);
         answer.id_user = Main.user.id;
         
-        for (int i = 0; i < db.finalities.length; i++) {
-            if (cbxFinalidadFormulario.getModel().equals(db.finalities[i])) {
+        String finality = (String) cbxFinalidadFormulario.getSelectedItem();
+        
+        for (int i = 0; i < Main.db.finalities.length; i++) {
+            if (finality.equals(Main.db.finalities[i])) {
                 answer.id_finality = i;
             }
         }
         
         answer.created_at = LocalDateTime.now();
         
-        db.answers.add(answer);
+        Main.db.answers.add(answer);
+        
+        answer = new Answer();
         
         TerminarLAC aceptar = new TerminarLAC();
         aceptar.setVisible(true);

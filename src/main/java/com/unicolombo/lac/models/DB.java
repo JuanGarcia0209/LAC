@@ -29,7 +29,7 @@ public class DB {
                     "Diplomado en Conciliación Extrajudicial", "Diplomado en logística y suministro",
                     "Diplomando Gestión Estratégica de Negocio", "No aplica" };
 
-    private User findUserById(int id) {
+    public User findUserById(int id) {
         for (User user : users) {
             if (user.id == id) {
                 return user;
@@ -54,5 +54,68 @@ public class DB {
             }
         }
         return null;
+    }
+    
+    public String getUser(int id, int version) {
+        User user = findUserById(id);
+
+        if (user != null) {
+            if (version == 1) {
+                return "\n\tID: " + user.id
+                +"\n\tNúmero de identificación: " + user.document
+                +"\n\tNombre: " + user.name
+                +"\n\tApellidos: " + user.lastName
+                +"\n\tRol: " + roles[user.id_rol]
+                +"\n\tPrograma académico: " + majors[user.id_major]
+                +"\n\tDepartamento/Institución: " + (user.id_department == 2 ? user.otherDepartment : departments[user.id_department]);
+            } else {
+                return "\n\t\tID: " + user.id
+                +"\n\t\tNúmero de identificación: " + user.document
+                +"\n\t\tNombre: " + user.name
+                +"\n\t\tApellidos: " + user.lastName
+                +"\n\t\tRol: " + roles[user.id_rol]
+                +"\n\t\tPrograma académico: " + majors[user.id_major]
+                +"\n\t\tDepartamento/Institución: " + (user.id_department == 2 ? user.otherDepartment : departments[user.id_department]);
+            }
+            
+        } else {
+            return null;
+        }
+        
+    }
+
+    public String getPqrs(int id, int version) {
+        Pqrs pqrs = findPqrsById(id);
+
+        if (pqrs != null) {
+            if (version == 1) {
+                return "\n\tID: " + pqrs.id
+                + "\n\tCalificación: " + pqrs.title
+                + "\n\tDescripción: " + pqrs.description
+                + "\n\n\tUsuario: " + getUser(pqrs.id_usuario, 2);
+            } else {
+                return "\n\t\tID: " + pqrs.id
+                + "\n\t\tTítulo: " + pqrs.title
+                + "\n\t\tDescripción: " + pqrs.description
+                + "\n\n\tUsuario: " + getUser(pqrs.id_usuario, 2);
+            }
+        } else {
+            return null;
+        }
+        
+    }
+
+    public String getAnswer(int id) {
+        Answer answer = findAnswerById(id);
+
+        if (answer != null) {
+            return "\n\n\tID: " + answer.id
+            + "\n\n\tUsuario: " + getUser(answer.id_user, 2)
+            + "\n\n\tFinalidad: " +  (answer.id_finality == 4 ? answer.otherFinality : finalities[answer.id_finality])
+            + "\n\n\tPQRS: " + (answer.id_pqrs == 0 ? "No" : getPqrs(id, 2))
+            + "\n\n\tFecha de Creación: " + answer.created_at;
+        } else {
+            return null;
+        }
     }
 }

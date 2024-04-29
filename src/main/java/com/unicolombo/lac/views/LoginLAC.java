@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import main.java.com.unicolombo.lac.main.Main;
 import main.java.com.unicolombo.lac.models.DB;
-import main.java.com.unicolombo.lac.models.User;
+import main.java.com.unicolombo.lac.models.*;
 
 /**
  *
@@ -16,7 +16,7 @@ import main.java.com.unicolombo.lac.models.User;
  */
 public class LoginLAC extends javax.swing.JFrame {
 
-    static DB db = Main.db;
+    //static DB db = Main.db;
     
     /**
      * Creates new form LoginLAC
@@ -39,6 +39,7 @@ public class LoginLAC extends javax.swing.JFrame {
         TxtcomprobarIdentificacion = new javax.swing.JTextField();
         ButtonAceptar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        ButtonAceptar1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,6 +60,15 @@ public class LoginLAC extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("SimSun", 1, 18)); // NOI18N
         jLabel1.setText("Ingrese su documento");
 
+        ButtonAceptar1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ButtonAceptar1.setText("Ingresar a la DB");
+        ButtonAceptar1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ButtonAceptar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonAceptar1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -67,12 +77,16 @@ public class LoginLAC extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(TxtcomprobarIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(ButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addComponent(TxtcomprobarIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(66, 66, 66)
+                                .addComponent(ButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(ButtonAceptar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,7 +97,9 @@ public class LoginLAC extends javax.swing.JFrame {
                 .addComponent(TxtcomprobarIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(ButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(198, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
+                .addComponent(ButtonAceptar1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
         );
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/java/com/unicolombo/lac/images/uni222.jpeg"))); // NOI18N
@@ -111,13 +127,22 @@ public class LoginLAC extends javax.swing.JFrame {
         if (TxtcomprobarIdentificacion.getText().isEmpty()
                 || validateNumbers(TxtcomprobarIdentificacion.getText()) == false
                 || TxtcomprobarIdentificacion.getText().length() > 10) {
-            JOptionPane.showMessageDialog(null, "El campo debe contener al menos 10 números.", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "El campo debe contener menos de 10 números.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
         int document = Integer.parseInt(TxtcomprobarIdentificacion.getText());
 
         User foundUser = findUserByDocument(document);
+        
+        if (document == 1001) {
+            DBLAC vv = new DBLAC();
+            vv.setVisible(true);
+            this.dispose();
+            return;
+        }
+        
+        Main.user = new User();
 
         if (foundUser != null) {
             Main.user = foundUser;
@@ -143,6 +168,13 @@ public class LoginLAC extends javax.swing.JFrame {
         } 
            
     }//GEN-LAST:event_ButtonAceptarActionPerformed
+
+    private void ButtonAceptar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAceptar1ActionPerformed
+        // TODO add your handling code here:
+        DBLAC vv = new DBLAC();
+        vv.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ButtonAceptar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,7 +214,7 @@ public class LoginLAC extends javax.swing.JFrame {
     
     // Método para buscar un usuario por su número de documento
     public static User findUserByDocument(int document) {
-        for (User user : db.users) {
+        for (User user : Main.db.users) {
             if (user.document == document) {
                 return user;
             }
@@ -201,6 +233,7 @@ public class LoginLAC extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonAceptar;
+    private javax.swing.JButton ButtonAceptar1;
     private javax.swing.JTextField TxtcomprobarIdentificacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

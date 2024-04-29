@@ -15,8 +15,8 @@ import main.java.com.unicolombo.lac.models.User;
  * @author 57301
  */
 public class RegistroLAC extends javax.swing.JFrame {
-    static DB db = Main.db;
-    static User user = Main.user;
+    //static DB db = Main.db;
+    //static User user = Main.user;
     static DefaultComboBoxModel<String> modeloRoles = new DefaultComboBoxModel<>();
     static DefaultComboBoxModel<String> modeloDepartments = new DefaultComboBoxModel<>();
     static DefaultComboBoxModel<String> modeloMajors = new DefaultComboBoxModel<>();
@@ -25,8 +25,21 @@ public class RegistroLAC extends javax.swing.JFrame {
      * Creates new form regristroLAC
      */
     public RegistroLAC() {
+        for (String rol : Main.db.roles) {
+            modeloRoles.addElement(rol);
+        }
+        for (String department : Main.db.departments) {
+            modeloDepartments.addElement(department);
+        }
+        for (String major : Main.db.majors) {
+            modeloMajors.addElement(major);
+        }
+        
         initComponents();
         this.setLocationRelativeTo(null);
+        modeloRoles = new DefaultComboBoxModel<>();
+        modeloDepartments = new DefaultComboBoxModel<>();
+        modeloMajors = new DefaultComboBoxModel<>();
     }
 
     /**
@@ -52,17 +65,8 @@ public class RegistroLAC extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        for (String rol : db.roles) {
-            modeloRoles.addElement(rol);
-        }
         cbxRolRegistro = new javax.swing.JComboBox<>();
-        for (String department : db.departments) {
-            modeloDepartments.addElement(department);
-        }
         cbxInstitucionRegistro = new javax.swing.JComboBox<>();
-        for (String major : db.majors) {
-            modeloMajors.addElement(major);
-        }
         cbxCarreraRegistro = new javax.swing.JComboBox<>();
         jSeparator1 = new javax.swing.JSeparator();
         ButtonAceptarRegistro = new javax.swing.JButton();
@@ -268,33 +272,37 @@ public class RegistroLAC extends javax.swing.JFrame {
             return;
         }
         
-        user.id = (db.users.size() + 1);
-        user.name = txtNombresRegistro.getText();
-        user.lastName = txtApellidosRegistro.getText();
+        Main.user.id = (Main.db.users.size() + 1);
+        Main.user.name = txtNombresRegistro.getText();
+        Main.user.lastName = txtApellidosRegistro.getText();
         
-        for (int i = 0; i < db.roles.length; i++) {
-            if (cbxRolRegistro.getModel().equals(db.roles[i])) {
-                user.id_rol = i;
+        String rol = (String) cbxRolRegistro.getSelectedItem();
+        String major = (String) cbxCarreraRegistro.getSelectedItem();
+        String department = (String) cbxInstitucionRegistro.getSelectedItem();
+        
+        for (int i = 0; i < Main.db.roles.length; i++) {
+            if (rol.equals(Main.db.roles[i])) {
+                Main.user.id_rol = i;
             }
         }
         
-        for (int i = 0; i < db.majors.length; i++) {
-            if (cbxCarreraRegistro.getModel().equals(db.majors[i])) {
-                user.id_major = i;
+        for (int i = 0; i < Main.db.majors.length; i++) {
+            if (major.equals(Main.db.majors[i])) {
+                Main.user.id_major = i;
             }
         }
         
-        for (int i = 0; i < db.departments.length; i++) {
-            if (cbxInstitucionRegistro.getModel().equals(db.departments[i])) {
-                user.id_department = i;
+        for (int i = 0; i < Main.db.departments.length; i++) {
+            if (department.equals(Main.db.departments[i])) {
+                Main.user.id_department = i;
             }
         }
         
-        db.users.add(user);
+        Main.db.users.add(Main.user);
         
         FormularioLAC junior = new FormularioLAC();
         junior.setVisible(true);
-        this.dispose();// TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_ButtonAceptarRegistroActionPerformed
 
     private void ButtonCancelarRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelarRegistroActionPerformed

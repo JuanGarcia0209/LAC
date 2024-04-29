@@ -18,13 +18,13 @@ public class Main {
     public static User user = new User();
     
     public static void main(String[] args) {
-        User newUser = new User();
-        newUser.id = 1;
-        newUser.name = "Juan";
-        newUser.lastName = "Navarro";
-        newUser.document = 123;
+        //User newUser = new User();
+        user.id = 1;
+        user.name = "Juan";
+        user.lastName = "Navarro";
+        user.document = 123;
         
-        db.users.add(newUser);
+        db.users.add(user);
         
         //System.out.println(db.users.get(0).document);
     
