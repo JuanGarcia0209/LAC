@@ -6,6 +6,18 @@
 
 Proyecto de aula destinado a un público general para la gestión y el almacenamiento de su asistencia, enfocado en la biblioteca de la Fundación Universitaria Colombo Internacional UNICOLOMBO.
 
+
+## Releases
+
+Now, you can see the items save in the DataBase(simulated with Array List). Like users, answers, etc.
+
+For entrer to this view, you need do this steps:
+
+* Step 1:  press the start button "Entrar".
+* Step 2: in the Login view, write and login with "1001" in the input or press the button "Ingresar a la DB".
+* Step 3: now, you're in the DB Panel! Here, you can see all that you want.
+
+
 <!-- TABLE OF CONTENTS -->
 ## Tabla de contenidos
   <ol>
@@ -50,7 +62,9 @@ Paso 3: Compile y ejecute el proyecto.
 
 - README agregado.
 
-- Actualización de README.
+- Vista de base de datos agregada.
+
+- Corrección de errores.
 
 
 ## Lessons Learned
