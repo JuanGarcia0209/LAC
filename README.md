@@ -9,17 +9,17 @@ Proyecto de aula destinado a un público general para la gestión y el almacenam
 
 ## Releases
 
-Now, you can see the items save in the DataBase(simulated with Array List). Like users, answers, etc.
+Now, you can see the items save in the DataBase (simulated with ArrayList) like users, answers, etc.
 
-For entrer to this view, you need do this steps:
+For enter to this view, you need do this steps:
 
-* Step 1:  press the start button "Entrar".
-* Step 2: in the Login view, write and login with "1001" in the input or press the button "Ingresar a la DB".
-* Step 3: now, you're in the DB Panel! Here, you can see all that you want.
+* Step 1: Press the start button "Entrar".
+* Step 2: In the Login view, writing "1001" in the input and login or press the button "Ingresar a la DB".
+* Step 3: Now, you're in the DB Panel! Here, you can see all that you want.
 
 
 <!-- TABLE OF CONTENTS -->
-## Tabla de contenidos
+## Table of Contents
   <ol>
     <li><a href="#run-locally">Run Locally</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -79,9 +79,9 @@ Durante el desarrollo de este proyecto se adquirieron las siguientes habilidades
 
 ## Tech Stack
 
-**Client:** JFrame.
+**Cliente:** JFrame.
 
-**Server:** Java.
+**Servidor:** Java.
 
 
 ## FAQ
