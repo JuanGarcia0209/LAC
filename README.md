@@ -9,7 +9,7 @@ Proyecto de aula destinado a un público general para la gestión y el almacenam
 
 ## Releases
 
-Now, you can see the items save in the DataBase (simulated with ArrayList) like users, answers, etc.
+Now, you can see the items saved in the DataBase (simulated with ArrayList) like users, answers, etc.
 
 For enter to this view, you need do this steps:
 
