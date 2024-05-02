@@ -47,8 +47,7 @@ public class FormularioLAC extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField1 = new javax.swing.JTextField();
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
+        Botones = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -58,11 +57,11 @@ public class FormularioLAC extends javax.swing.JFrame {
         buttonAceptarFormulario = new javax.swing.JButton();
         buttonCancelarFormulario = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        BotonSi = new javax.swing.JRadioButton();
+        BotonNo = new javax.swing.JRadioButton();
         ButtonRegresarFormulario = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtCampoDePQRS = new javax.swing.JTextArea();
+        CampoPQRS = new javax.swing.JTextArea();
 
         jTextField1.setText("jTextField1");
 
@@ -108,20 +107,18 @@ public class FormularioLAC extends javax.swing.JFrame {
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        buttonGroup2.add(jRadioButton1);
-        jRadioButton1.setText("Si");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        BotonSi.setText("Si");
+        BotonSi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                BotonSiActionPerformed(evt);
             }
         });
 
-        buttonGroup2.add(jRadioButton2);
-        jRadioButton2.setSelected(true);
-        jRadioButton2.setText("No");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        BotonNo.setSelected(true);
+        BotonNo.setText("No");
+        BotonNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                BotonNoActionPerformed(evt);
             }
         });
 
@@ -132,9 +129,9 @@ public class FormularioLAC extends javax.swing.JFrame {
             }
         });
 
-        txtCampoDePQRS.setColumns(20);
-        txtCampoDePQRS.setRows(5);
-        jScrollPane1.setViewportView(txtCampoDePQRS);
+        CampoPQRS.setColumns(20);
+        CampoPQRS.setRows(5);
+        jScrollPane1.setViewportView(CampoPQRS);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -154,9 +151,9 @@ public class FormularioLAC extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
-                        .addComponent(jRadioButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(BotonSi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jRadioButton2)
+                        .addComponent(BotonNo)
                         .addGap(261, 261, 261))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,8 +184,8 @@ public class FormularioLAC extends javax.swing.JFrame {
                         .addGap(62, 62, 62)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2))
+                            .addComponent(BotonSi)
+                            .addComponent(BotonNo))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -214,13 +211,13 @@ public class FormularioLAC extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void BotonSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSiActionPerformed
             // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_BotonSiActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void BotonNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonNoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_BotonNoActionPerformed
 
     private void cbxFinalidadFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxFinalidadFormularioActionPerformed
         // TODO add your handling code here:
@@ -297,22 +294,21 @@ public class FormularioLAC extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton BotonNo;
+    private javax.swing.JRadioButton BotonSi;
+    private javax.swing.ButtonGroup Botones;
     private javax.swing.JButton ButtonRegresarFormulario;
+    private javax.swing.JTextArea CampoPQRS;
     private javax.swing.JButton buttonAceptarFormulario;
     private javax.swing.JButton buttonCancelarFormulario;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cbxFinalidadFormulario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextArea txtCampoDePQRS;
     // End of variables declaration//GEN-END:variables
 }
