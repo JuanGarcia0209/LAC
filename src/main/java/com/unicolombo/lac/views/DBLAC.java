@@ -69,13 +69,13 @@ public class DBLAC extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setType(java.awt.Window.Type.UTILITY);
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(135, 215, 215));
         jTextArea1.setColumns(20);
-        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea1.setRows(5);
         jTextArea1.setText(txt);
         jTextArea1.setAutoscrolls(false);
@@ -83,11 +83,9 @@ public class DBLAC extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         jLabel1.setFont(new java.awt.Font(".SF NS Text", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("**********  Almacenamiento interno  **********");
 
         jButton1.setBackground(new java.awt.Color(135, 215, 215));
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Aceptar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
