@@ -58,6 +58,11 @@ public class LoginLAC extends javax.swing.JFrame {
                 ButtonAceptarActionPerformed(evt);
             }
         });
+        ButtonAceptar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ButtonAceptarKeyReleased(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("SimSun", 1, 18)); // NOI18N
         jLabel1.setText("Ingrese su documento");
@@ -187,6 +192,10 @@ public class LoginLAC extends javax.swing.JFrame {
         vv.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ButtonAceptar1ActionPerformed
+
+    private void ButtonAceptarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ButtonAceptarKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonAceptarKeyReleased
 
     /**
      * @param args the command line arguments

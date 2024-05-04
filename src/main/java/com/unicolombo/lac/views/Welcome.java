@@ -39,11 +39,20 @@ public class Welcome extends javax.swing.JFrame {
         setBackground(new java.awt.Color(153, 0, 0));
         setType(java.awt.Window.Type.UTILITY);
 
+        btnEntrar.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         btnEntrar.setText("Entrar");
         btnEntrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, null, new java.awt.Color(51, 51, 51), null, null));
         btnEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEntrarActionPerformed(evt);
+            }
+        });
+        btnEntrar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnEntrarKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                btnEntrarKeyReleased(evt);
             }
         });
 
@@ -123,10 +132,20 @@ public class Welcome extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        LoginLAC entrar = new LoginLAC();
-        entrar.setVisible(true);
-        this.dispose();// TODO add your handling code here:
+        //LoginLAC entrar = new LoginLAC();
+        //entrar.setVisible(true);
+        //this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_btnEntrarActionPerformed
+
+    private void btnEntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEntrarKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnEntrarKeyPressed
+
+    private void btnEntrarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEntrarKeyReleased
+    LoginLAC entrar = new LoginLAC();
+        entrar.setVisible(true);
+        this.dispose();    // TODO add your handling code here:
+    }//GEN-LAST:event_btnEntrarKeyReleased
 
     /**
      * @param args the command line arguments

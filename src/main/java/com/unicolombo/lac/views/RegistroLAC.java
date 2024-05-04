@@ -128,6 +128,11 @@ public class RegistroLAC extends javax.swing.JFrame {
 
         cbxInstitucionRegistro.setModel(modeloDepartments);
         cbxInstitucionRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        cbxInstitucionRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxInstitucionRegistroActionPerformed(evt);
+            }
+        });
 
         cbxCarreraRegistro.setModel(modeloMajors);
         cbxCarreraRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -139,6 +144,11 @@ public class RegistroLAC extends javax.swing.JFrame {
         ButtonAceptarRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonAceptarRegistroActionPerformed(evt);
+            }
+        });
+        ButtonAceptarRegistro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                ButtonAceptarRegistroKeyReleased(evt);
             }
         });
 
@@ -191,15 +201,15 @@ public class RegistroLAC extends javax.swing.JFrame {
                                 .addComponent(cbxRolRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cbxInstitucionRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbxCarreraRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cbxCarreraRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(70, 70, 70)
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel9)))))
-                .addGap(83, 114, Short.MAX_VALUE))
+                .addGap(94, 94, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -311,9 +321,6 @@ public class RegistroLAC extends javax.swing.JFrame {
         
         Main.db.users.add(Main.user);
         
-        FormularioLAC junior = new FormularioLAC();
-        junior.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_ButtonAceptarRegistroActionPerformed
 
     private void ButtonCancelarRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCancelarRegistroActionPerformed
@@ -321,6 +328,16 @@ public class RegistroLAC extends javax.swing.JFrame {
         cancelar.setVisible(true);
         this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_ButtonCancelarRegistroActionPerformed
+
+    private void cbxInstitucionRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxInstitucionRegistroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxInstitucionRegistroActionPerformed
+
+    private void ButtonAceptarRegistroKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ButtonAceptarRegistroKeyReleased
+    FormularioLAC junior = new FormularioLAC();
+        junior.setVisible(true);
+        this.dispose();    // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonAceptarRegistroKeyReleased
 
     /**
      * @param args the command line arguments

@@ -36,7 +36,6 @@ public class FormularioLAC extends javax.swing.JFrame {
             ButtonRegresarFormulario.setVisible(false);
         //}
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -46,8 +45,6 @@ public class FormularioLAC extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        Botones = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -57,13 +54,10 @@ public class FormularioLAC extends javax.swing.JFrame {
         buttonAceptarFormulario = new javax.swing.JButton();
         buttonCancelarFormulario = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
-        BotonSi = new javax.swing.JRadioButton();
-        BotonNo = new javax.swing.JRadioButton();
         ButtonRegresarFormulario = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        CampoPQRS = new javax.swing.JTextArea();
-
-        jTextField1.setText("jTextField1");
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Library Access Control");
@@ -85,20 +79,24 @@ public class FormularioLAC extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Algerian", 1, 18)); // NOI18N
         jLabel3.setText("Finalidad");
 
-        jLabel5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Algerian", 1, 18)); // NOI18N
         jLabel5.setText("Pqrs");
 
+        buttonAceptarFormulario.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
         buttonAceptarFormulario.setText("Aceptar");
+        buttonAceptarFormulario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buttonAceptarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonAceptarFormularioActionPerformed(evt);
             }
         });
 
+        buttonCancelarFormulario.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
         buttonCancelarFormulario.setText("Cancelar");
+        buttonCancelarFormulario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         buttonCancelarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonCancelarFormularioActionPerformed(evt);
@@ -108,31 +106,20 @@ public class FormularioLAC extends javax.swing.JFrame {
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        BotonSi.setText("Si");
-        BotonSi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonSiActionPerformed(evt);
-            }
-        });
-
-        BotonNo.setSelected(true);
-        BotonNo.setText("No");
-        BotonNo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonNoActionPerformed(evt);
-            }
-        });
-
+        ButtonRegresarFormulario.setFont(new java.awt.Font("Segoe UI Emoji", 1, 12)); // NOI18N
         ButtonRegresarFormulario.setText("Regresar");
+        ButtonRegresarFormulario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         ButtonRegresarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonRegresarFormularioActionPerformed(evt);
             }
         });
 
-        CampoPQRS.setColumns(20);
-        CampoPQRS.setRows(5);
-        jScrollPane1.setViewportView(CampoPQRS);
+        jRadioButton1.setText("Si");
+
+        jRadioButton2.setText("No");
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/java/com/unicolombo/lac/images/lac-single-dark-logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -143,59 +130,71 @@ public class FormularioLAC extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(78, 78, 78))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(BotonSi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BotonNo)
-                        .addGap(261, 261, 261))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(buttonAceptarFormulario)
-                                .addGap(33, 33, 33)
-                                .addComponent(buttonCancelarFormulario)
-                                .addGap(18, 18, 18)
-                                .addComponent(ButtonRegresarFormulario))
-                            .addComponent(jLabel3)
-                            .addComponent(cbxFinalidadFormulario, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGap(21, 21, 21)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButton1)
+                            .addComponent(cbxFinalidadFormulario, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(buttonAceptarFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+                        .addGap(19, 19, 19)
+                        .addComponent(buttonCancelarFormulario, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButton2)
+                            .addComponent(ButtonRegresarFormulario, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(130, 130, 130))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(cbxFinalidadFormulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(62, 62, 62)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(BotonSi)
-                            .addComponent(BotonNo))
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonAceptarFormulario)
-                    .addComponent(buttonCancelarFormulario)
-                    .addComponent(ButtonRegresarFormulario))
-                .addGap(96, 96, 96))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel1)
+                                .addContainerGap(134, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jSeparator2)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(11, 11, 11)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel3)
+                                            .addComponent(cbxFinalidadFormulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(49, 49, 49)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel5)
+                                            .addComponent(jRadioButton1)
+                                            .addComponent(jRadioButton2))
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(96, 96, 96))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonAceptarFormulario)
+                            .addComponent(buttonCancelarFormulario)
+                            .addComponent(ButtonRegresarFormulario))
+                        .addGap(79, 79, 79))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -211,14 +210,6 @@ public class FormularioLAC extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void BotonSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSiActionPerformed
-            // TODO add your handling code here:
-    }//GEN-LAST:event_BotonSiActionPerformed
-
-    private void BotonNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonNoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotonNoActionPerformed
 
     private void cbxFinalidadFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxFinalidadFormularioActionPerformed
         // TODO add your handling code here:
@@ -295,21 +286,18 @@ public class FormularioLAC extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton BotonNo;
-    private javax.swing.JRadioButton BotonSi;
-    private javax.swing.ButtonGroup Botones;
     private javax.swing.JButton ButtonRegresarFormulario;
-    private javax.swing.JTextArea CampoPQRS;
     private javax.swing.JButton buttonAceptarFormulario;
     private javax.swing.JButton buttonCancelarFormulario;
     private javax.swing.JComboBox<String> cbxFinalidadFormulario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
