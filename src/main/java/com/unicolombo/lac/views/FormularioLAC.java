@@ -276,7 +276,6 @@ public class FormularioLAC extends javax.swing.JFrame {
         //String pqrsOption = (String) buttonGroup1.getSelection().getActionCommand();
         
         if (jRadioButton1.isSelected()) {
-            JOptionPane.showMessageDialog(null, "condicional válido.", "Success", JOptionPane.ERROR_MESSAGE);
             pqrs.id = (Main.db.pqrses.size() + 1);
             pqrs.title = jTextField1.getText();
             pqrs.description = jTextPane1.getText();

@@ -68,7 +68,7 @@ public class DB {
                 +"\n\tRol: " + roles[user.id_rol]
                 +"\n\tPrograma académico: " + majors[user.id_major]
                 +"\n\tDepartamento/Institución: " + (user.id_department == 2 ? user.otherDepartment : departments[user.id_department]);
-            } else {
+            }else if (version == 2) {
                 return "\n\t\tID: " + user.id
                 +"\n\t\tNúmero de identificación: " + user.document
                 +"\n\t\tNombre: " + user.name
@@ -76,6 +76,14 @@ public class DB {
                 +"\n\t\tRol: " + roles[user.id_rol]
                 +"\n\t\tPrograma académico: " + majors[user.id_major]
                 +"\n\t\tDepartamento/Institución: " + (user.id_department == 2 ? user.otherDepartment : departments[user.id_department]);
+            }else{
+                return "\n\t\t\tID: " + user.id
+                +"\n\t\t\tNúmero de identificación: " + user.document
+                +"\n\t\t\tNombre: " + user.name
+                +"\n\t\t\tApellidos: " + user.lastName
+                +"\n\t\t\tRol: " + roles[user.id_rol]
+                +"\n\t\t\tPrograma académico: " + majors[user.id_major]
+                +"\n\t\t\tDepartamento/Institución: " + (user.id_department == 2 ? user.otherDepartment : departments[user.id_department]);
             }
             
         } else {
@@ -90,14 +98,14 @@ public class DB {
         if (pqrs != null) {
             if (version == 1) {
                 return "\n\tID: " + pqrs.id
-                + "\n\tCalificación: " + pqrs.title
+                + "\n\tTítulo: " + pqrs.title
                 + "\n\tDescripción: " + pqrs.description
                 + "\n\n\tUsuario: " + getUser(pqrs.id_usuario, 2);
             } else {
                 return "\n\t\tID: " + pqrs.id
                 + "\n\t\tTítulo: " + pqrs.title
                 + "\n\t\tDescripción: " + pqrs.description
-                + "\n\n\tUsuario: " + getUser(pqrs.id_usuario, 2);
+                + "\n\n\t\tUsuario: " + getUser(pqrs.id_usuario, 3);
             }
         } else {
             return null;
