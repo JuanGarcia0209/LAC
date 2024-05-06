@@ -66,6 +66,8 @@ Paso 3: Compile y ejecute el proyecto.
 
 - Corrección de errores.
 
+- Opción de PQRS habilitada.
+
 
 ## Lessons Learned
 
