@@ -16,6 +16,7 @@ public class Welcome extends javax.swing.JFrame {
     public Welcome() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -132,20 +133,20 @@ public class Welcome extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        //LoginLAC entrar = new LoginLAC();
-        //entrar.setVisible(true);
-        //this.dispose();// TODO add your handling code here:
+        LoginLAC entrar = new LoginLAC();
+        entrar.setVisible(true);
+        this.dispose();// TODO add your handling code here:
     }//GEN-LAST:event_btnEntrarActionPerformed
+
+    private void btnEntrarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEntrarKeyReleased
+        LoginLAC entrar = new LoginLAC();
+        entrar.setVisible(true);
+        this.dispose();    // TODO add your handling code here:
+    }//GEN-LAST:event_btnEntrarKeyReleased
 
     private void btnEntrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEntrarKeyPressed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEntrarKeyPressed
-
-    private void btnEntrarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnEntrarKeyReleased
-    LoginLAC entrar = new LoginLAC();
-        entrar.setVisible(true);
-        this.dispose();    // TODO add your handling code here:
-    }//GEN-LAST:event_btnEntrarKeyReleased
 
     /**
      * @param args the command line arguments

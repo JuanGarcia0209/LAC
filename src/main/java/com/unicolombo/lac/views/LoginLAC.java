@@ -49,6 +49,11 @@ public class LoginLAC extends javax.swing.JFrame {
 
         TxtcomprobarIdentificacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         TxtcomprobarIdentificacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        TxtcomprobarIdentificacion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                TxtcomprobarIdentificacionKeyPressed(evt);
+            }
+        });
 
         ButtonAceptar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ButtonAceptar.setText("ACEPTAR");
@@ -56,11 +61,6 @@ public class LoginLAC extends javax.swing.JFrame {
         ButtonAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonAceptarActionPerformed(evt);
-            }
-        });
-        ButtonAceptar.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                ButtonAceptarKeyReleased(evt);
             }
         });
 
@@ -182,8 +182,7 @@ public class LoginLAC extends javax.swing.JFrame {
                 vv.setVisible(true);
                 this.dispose();
             }
-        } 
-           
+        }
     }//GEN-LAST:event_ButtonAceptarActionPerformed
 
     private void ButtonAceptar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAceptar1ActionPerformed
@@ -193,9 +192,52 @@ public class LoginLAC extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ButtonAceptar1ActionPerformed
 
-    private void ButtonAceptarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ButtonAceptarKeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonAceptarKeyReleased
+    private void TxtcomprobarIdentificacionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtcomprobarIdentificacionKeyPressed
+        if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            if (TxtcomprobarIdentificacion.getText().isEmpty()
+                || validateNumbers(TxtcomprobarIdentificacion.getText()) == false
+                || TxtcomprobarIdentificacion.getText().length() > 10) {
+                JOptionPane.showMessageDialog(null, "El campo debe contener menos de 10 números.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            int document = Integer.parseInt(TxtcomprobarIdentificacion.getText());
+
+            User foundUser = findUserByDocument(document);
+
+            if (document == 1001) {
+                DBLAC vv = new DBLAC();
+                vv.setVisible(true);
+                this.dispose();
+                return;
+            }
+
+            Main.user = new User();
+
+            if (foundUser != null) {
+                Main.user = foundUser;
+                FormularioLAC vv = new FormularioLAC();
+                vv.setVisible(true);
+                this.dispose();
+            } else {
+                String[] opciones = {"Aceptar", "Cancelar"};
+
+                int respuesta = JOptionPane.showOptionDialog(null, "La identificación ingresada no se encuentra registrada. ¿Deseas registrarla?", "Registrar usuario",
+                    JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, opciones, opciones[0]);
+
+                if (respuesta == JOptionPane.YES_OPTION) {
+                    Main.user.document = document;
+                    RegistroLAC vv = new RegistroLAC();
+                    vv.setVisible(true);
+                    this.dispose();
+                }else{
+                    Welcome vv = new Welcome();
+                    vv.setVisible(true);
+                    this.dispose();
+                }
+            }
+        }
+    }//GEN-LAST:event_TxtcomprobarIdentificacionKeyPressed
 
     /**
      * @param args the command line arguments
@@ -233,7 +275,6 @@ public class LoginLAC extends javax.swing.JFrame {
         });
     }
     
-    // Método para buscar un usuario por su número de documento
     public static User findUserByDocument(int document) {
         for (User user : Main.db.users) {
             if (user.document == document) {
