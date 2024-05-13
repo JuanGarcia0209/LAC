@@ -7,6 +7,8 @@ package main.java.com.unicolombo.lac.views;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import main.java.com.unicolombo.lac.main.Main;
+import static main.java.com.unicolombo.lac.main.Main.db;
+import main.java.com.unicolombo.lac.storage.DBController;
 
 /**
  *
@@ -333,6 +335,13 @@ public class RegistroLAC extends javax.swing.JFrame {
         }
         
         Main.db.users.add(Main.user);
+        
+        try {
+            DBController.create(Main.db, "DB");
+        } catch (Exception e) {
+            //throw new Exception();
+            JOptionPane.showMessageDialog(null, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
         
         FormularioLAC junior = new FormularioLAC();
         junior.setVisible(true);

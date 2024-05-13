@@ -10,6 +10,7 @@ import main.java.com.unicolombo.lac.main.Main;
 import main.java.com.unicolombo.lac.models.Answer;
 import javax.swing.JOptionPane;
 import main.java.com.unicolombo.lac.models.Pqrs;
+import main.java.com.unicolombo.lac.storage.DBController;
 
 /**
  *
@@ -289,6 +290,12 @@ public class FormularioLAC extends javax.swing.JFrame {
         answer.created_at = LocalDateTime.now();
         
         Main.db.answers.add(answer);
+        try {
+            DBController.create(Main.db, "DB");
+        } catch (Exception e) {
+            //throw new Exception();
+            JOptionPane.showMessageDialog(null, "Error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
         
         answer = new Answer();
         

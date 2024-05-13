@@ -5,13 +5,14 @@
  */
 package main.java.com.unicolombo.lac.models;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
  *
  * @author macbook
  */
-public class Answer {
+public class Answer implements Serializable{
     public int id;
     public int id_user;
     public int id_finality;

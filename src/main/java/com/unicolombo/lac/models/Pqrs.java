@@ -5,11 +5,13 @@
  */
 package main.java.com.unicolombo.lac.models;
 
+import java.io.Serializable;
+
 /**
  *
  * @author macbook
  */
-public class Pqrs {
+public class Pqrs implements Serializable{
     public int id;
     public String title;
     public String description;

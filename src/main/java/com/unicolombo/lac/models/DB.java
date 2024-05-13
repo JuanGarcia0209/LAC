@@ -5,13 +5,14 @@
  */
 package main.java.com.unicolombo.lac.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author macbook
  */
-public class DB {
+public class DB implements Serializable{
     public ArrayList<User> users = new ArrayList<>();
     public ArrayList<Answer> answers = new ArrayList<>();
     public ArrayList<Pqrs> pqrses = new ArrayList<>();
