@@ -68,6 +68,8 @@ Paso 3: Compile y ejecute el proyecto.
 
 - Opción de PQRS habilitada.
 
+- Almacenamiento de base de datos local agregado.
+
 
 ## Lessons Learned
 
