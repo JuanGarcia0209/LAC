@@ -40,6 +40,8 @@ public class Welcome extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setType(java.awt.Window.Type.UTILITY);
 
+        jPanel1.setBackground(new java.awt.Color(227, 238, 239));
+
         btnEntrar.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
         btnEntrar.setText("Entrar");
         btnEntrar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
