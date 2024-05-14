@@ -60,11 +60,11 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Component id="ButtonAceptarRegistro" min="-2" pref="81" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                           <Component id="ButtonCancelarRegistro" min="-2" pref="85" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
@@ -82,28 +82,38 @@
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Component id="jSeparator1" min="-2" pref="25" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtDocuemtoRegistro" min="-2" pref="161" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtNombresRegistro" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
-                                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtApellidosRegistro" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
-                                      <Component id="jLabel8" min="-2" pref="33" max="-2" attributes="0"/>
-                                      <Component id="cbxRolRegistro" min="-2" pref="110" max="-2" attributes="0"/>
-                                      <Component id="jLabel9" alignment="0" min="-2" pref="162" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
-                                          <EmptySpace pref="3" max="32767" attributes="0"/>
+                                          <EmptySpace pref="190" max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                                                      <Component id="cbxInstitucionRegistro" min="-2" pref="120" max="-2" attributes="0"/>
+                                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="cbxInstitucionRegistro" pref="120" max="32767" attributes="0"/>
+                                                      <Component id="TextoOtroInstitucion" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
-                                              <Component id="cbxCarreraRegistro" min="-2" pref="277" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="txtDocuemtoRegistro" min="-2" pref="161" max="-2" attributes="0"/>
+                                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="txtNombresRegistro" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
+                                                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="txtApellidosRegistro" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
+                                                      <Component id="jLabel8" min="-2" pref="33" max="-2" attributes="0"/>
+                                                      <Component id="cbxRolRegistro" min="-2" pref="110" max="-2" attributes="0"/>
+                                                      <Component id="jLabel9" alignment="0" min="-2" pref="162" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace min="0" pref="118" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Component id="cbxCarreraRegistro" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -111,7 +121,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="92" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -147,23 +157,25 @@
                                               <Component id="cbxRolRegistro" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="cbxInstitucionRegistro" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="cbxCarreraRegistro" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                  <Component id="TextoOtroInstitucion" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="cbxCarreraRegistro" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jSeparator1" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="ButtonAceptarRegistro" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                               <Component id="ButtonCancelarRegistro" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="350" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="333" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
@@ -306,6 +318,9 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbxInstitucionRegistroActionPerformed"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -319,6 +334,12 @@
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
               </Border>
+            </Property>
+            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[72, 40]"/>
+            </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[40, 20]"/>
             </Property>
           </Properties>
           <AuxValues>
@@ -372,6 +393,11 @@
               <Image iconType="3" name="/main/java/com/unicolombo/lac/images/lac-single-dark-logo.png"/>
             </Property>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="TextoOtroInstitucion">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TextoOtroInstitucionActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

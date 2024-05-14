@@ -52,10 +52,10 @@ public class TerminarLAC extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Library Access Control");
-        setBackground(new java.awt.Color(218, 229, 231));
+        setBackground(new java.awt.Color(255, 255, 255));
         setType(java.awt.Window.Type.UTILITY);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(227, 238, 239));
 
         jLabel1.setFont(new java.awt.Font("Bauhaus 93", 1, 18)); // NOI18N
         jLabel1.setText(" GRACIAS");

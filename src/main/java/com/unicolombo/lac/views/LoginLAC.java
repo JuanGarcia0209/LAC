@@ -47,6 +47,8 @@ public class LoginLAC extends javax.swing.JFrame {
         setTitle("Library Access Control");
         setType(java.awt.Window.Type.UTILITY);
 
+        jPanel1.setBackground(new java.awt.Color(227, 238, 239));
+
         TxtcomprobarIdentificacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         TxtcomprobarIdentificacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         TxtcomprobarIdentificacion.addKeyListener(new java.awt.event.KeyAdapter() {
