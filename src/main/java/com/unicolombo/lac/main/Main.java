@@ -32,6 +32,7 @@ public class Main {
             user.lastName = "García";
             user.document = 1369;
 
+            db = new DB();
             db.users.add(user);
 
             try {
