@@ -15,9 +15,10 @@ import main.java.com.unicolombo.lac.views.Welcome;
  * @author macbook
  */
 public class Main {
+
     public static DB db; // = new DB();
     public static User user = new User();
-    
+
     public static void main(String[] args) throws Exception {
         if (DBController.checkFile("DB")) {
             try {
@@ -38,11 +39,10 @@ public class Main {
             } catch (Exception e) {
                 throw new Exception(e.getMessage());
             }
-            
+
         }
-        
+
         //System.out.println(db.users.get(0).document);
-    
         Welcome.main(args);
     }
 }

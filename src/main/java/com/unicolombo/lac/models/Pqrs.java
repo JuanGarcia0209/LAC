@@ -11,7 +11,8 @@ import java.io.Serializable;
  *
  * @author macbook
  */
-public class Pqrs implements Serializable{
+public class Pqrs implements Serializable {
+
     public int id;
     public String title;
     public String description;

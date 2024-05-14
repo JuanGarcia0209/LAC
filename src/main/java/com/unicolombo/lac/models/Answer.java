@@ -12,7 +12,8 @@ import java.time.LocalDateTime;
  *
  * @author macbook
  */
-public class Answer implements Serializable{
+public class Answer implements Serializable {
+
     public int id;
     public int id_user;
     public int id_finality;

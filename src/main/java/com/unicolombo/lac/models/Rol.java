@@ -11,7 +11,8 @@ import java.io.Serializable;
  *
  * @author macbook
  */
-public class Rol implements Serializable{
+public class Rol implements Serializable {
+
     public int id;
     public String name;
 }

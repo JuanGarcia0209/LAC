@@ -7,8 +7,8 @@ package main.java.com.unicolombo.lac.views;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import main.java.com.unicolombo.lac.main.Main;
-import static main.java.com.unicolombo.lac.main.Main.db;
 import main.java.com.unicolombo.lac.storage.DBController;
+import main.java.com.unicolombo.lac.assets.BoundsPopupMenuListener;
 
 /**
  *
@@ -20,6 +20,7 @@ public class RegistroLAC extends javax.swing.JFrame {
     static DefaultComboBoxModel<String> modeloRoles = new DefaultComboBoxModel<>();
     static DefaultComboBoxModel<String> modeloDepartments = new DefaultComboBoxModel<>();
     static DefaultComboBoxModel<String> modeloMajors = new DefaultComboBoxModel<>();
+
 
     /**
      * Creates new form regristroLAC
@@ -44,6 +45,10 @@ public class RegistroLAC extends javax.swing.JFrame {
         modeloRoles = new DefaultComboBoxModel<>();
         modeloDepartments = new DefaultComboBoxModel<>();
         modeloMajors = new DefaultComboBoxModel<>();
+        
+        BoundsPopupMenuListener listener = new BoundsPopupMenuListener(true, false);
+        cbxCarreraRegistro.addPopupMenuListener( listener );
+        cbxCarreraRegistro.setPrototypeDisplayValue("ItemWWW");
     }
 
     /**

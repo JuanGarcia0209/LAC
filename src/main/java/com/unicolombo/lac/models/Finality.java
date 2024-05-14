@@ -11,7 +11,8 @@ import java.io.Serializable;
  *
  * @author macbook
  */
-public class Finality implements Serializable{
+public class Finality implements Serializable {
+
     public int id;
     public String name;
 }

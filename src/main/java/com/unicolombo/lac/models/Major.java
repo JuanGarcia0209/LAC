@@ -11,7 +11,8 @@ import java.io.Serializable;
  *
  * @author macbook
  */
-public class Major implements Serializable{
+public class Major implements Serializable {
+
     public int id;
     public String name;
 }
