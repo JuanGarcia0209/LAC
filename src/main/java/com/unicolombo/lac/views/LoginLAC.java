@@ -15,7 +15,6 @@ import main.java.com.unicolombo.lac.models.*;
  * @author 57301
  */
 public class LoginLAC extends javax.swing.JFrame {
-
     //static DB db = Main.db;
     
     /**
