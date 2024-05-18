@@ -4,6 +4,8 @@
  */
 package main.java.com.unicolombo.lac.views;
 
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import main.java.com.unicolombo.lac.main.Main;
@@ -15,6 +17,8 @@ import main.java.com.unicolombo.lac.models.*;
  * @author 57301
  */
 public class LoginLAC extends javax.swing.JFrame {
+    static Timer timer = new Timer();
+    static TimerTask task1;
     //static DB db = Main.db;
     
     /**
@@ -23,6 +27,17 @@ public class LoginLAC extends javax.swing.JFrame {
     public LoginLAC() {
         initComponents();
         this.setLocationRelativeTo(null);
+        /*LoginLAC view = this;
+        
+        task1 = new TimerTask(){
+        public void run() {
+        Welcome vv = new Welcome();
+        vv.setVisible(true);
+        view.dispose();
+        }
+        };
+        timer.schedule(task1, 5000);
+        */
     }
 
     /**
@@ -44,12 +59,18 @@ public class LoginLAC extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Library Access Control");
+        setBackground(new java.awt.Color(227, 238, 239));
         setType(java.awt.Window.Type.UTILITY);
 
         jPanel1.setBackground(new java.awt.Color(227, 238, 239));
 
         TxtcomprobarIdentificacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         TxtcomprobarIdentificacion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        TxtcomprobarIdentificacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtcomprobarIdentificacionActionPerformed(evt);
+            }
+        });
         TxtcomprobarIdentificacion.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 TxtcomprobarIdentificacionKeyPressed(evt);
@@ -194,6 +215,20 @@ public class LoginLAC extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonAceptar1ActionPerformed
 
     private void TxtcomprobarIdentificacionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtcomprobarIdentificacionKeyPressed
+        /*timer.cancel();
+        timer = new Timer();
+        
+        LoginLAC view = this;
+        
+        task1 = new TimerTask(){
+        public void run() {
+        Welcome vv = new Welcome();
+        vv.setVisible(true);
+        view.dispose();
+        }
+        };
+        timer.schedule(task1, 5000);
+        */
         if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
             if (TxtcomprobarIdentificacion.getText().isEmpty()
                 || validateNumbers(TxtcomprobarIdentificacion.getText()) == false
@@ -239,6 +274,10 @@ public class LoginLAC extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_TxtcomprobarIdentificacionKeyPressed
+
+    private void TxtcomprobarIdentificacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtcomprobarIdentificacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtcomprobarIdentificacionActionPerformed
 
     /**
      * @param args the command line arguments

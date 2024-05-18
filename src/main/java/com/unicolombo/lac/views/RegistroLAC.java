@@ -89,7 +89,7 @@ public class RegistroLAC extends javax.swing.JFrame {
         setTitle("Library Access Control");
         setType(java.awt.Window.Type.UTILITY);
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(142, 179, 243));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/java/com/unicolombo/lac/images/registro.png"))); // NOI18N
 

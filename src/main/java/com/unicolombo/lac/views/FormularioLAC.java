@@ -70,7 +70,7 @@ public class FormularioLAC extends javax.swing.JFrame {
         setTitle("Library Access Control");
         setType(java.awt.Window.Type.UTILITY);
 
-        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(142, 179, 243));
         jPanel1.setForeground(new java.awt.Color(51, 51, 51));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/java/com/unicolombo/lac/images/}hhh.png"))); // NOI18N
@@ -132,7 +132,7 @@ public class FormularioLAC extends javax.swing.JFrame {
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/java/com/unicolombo/lac/images/lac-single-dark-logo.png"))); // NOI18N
 
-        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(142, 179, 243));
 
         jScrollPane1.setViewportView(jTextPane1);
 
