@@ -4,6 +4,8 @@
  */
 package main.java.com.unicolombo.lac.views;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import main.java.com.unicolombo.lac.main.Main;
@@ -42,6 +44,8 @@ public class RegistroLAC extends javax.swing.JFrame {
         
         initComponents();
         this.setLocationRelativeTo(null);
+        jPanel2.setVisible(false);
+        
         modeloRoles = new DefaultComboBoxModel<>();
         modeloDepartments = new DefaultComboBoxModel<>();
         modeloMajors = new DefaultComboBoxModel<>();
@@ -49,6 +53,29 @@ public class RegistroLAC extends javax.swing.JFrame {
         BoundsPopupMenuListener listener = new BoundsPopupMenuListener(true, false);
         cbxCarreraRegistro.addPopupMenuListener( listener );
         cbxCarreraRegistro.setPrototypeDisplayValue("ItemWWW");
+        
+        String department = (String) cbxInstitucionRegistro.getSelectedItem();
+//        for (int i = 0; i < Main.db.departments.length; i++) {
+//            if (department.equals("Otro")) {
+//                TextoOtroInstitucion.setVisible(true);
+//                break;
+//            }
+//            if (TextoOtroInstitucion.isVisible()) {
+//                TextoOtroInstitucion.setVisible(false);
+//            }
+//        }
+//        cbxInstitucionRegistro.addActionListener(new ActionListener() {
+//            public void actionPerformed(ActionEvent e) {
+//                String selectedModel = (String) cbxInstitucionRegistro.getSelectedItem();
+//                if (selectedModel.equals("Otro")) {
+//                    TextoOtroInstitucion.setVisible(true);
+//                    TextoOtroInstitucion.setEnabled(true);
+//                } else {
+//                    TextoOtroInstitucion.setVisible(false);
+//                    TextoOtroInstitucion.setEnabled(false);
+//                }
+//            }
+//        });
     }
 
     /**
@@ -81,7 +108,9 @@ public class RegistroLAC extends javax.swing.JFrame {
         ButtonAceptarRegistro = new javax.swing.JButton();
         ButtonCancelarRegistro = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         TextoOtroInstitucion = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
 
@@ -177,11 +206,28 @@ public class RegistroLAC extends javax.swing.JFrame {
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/java/com/unicolombo/lac/images/lac-single-dark-logo.png"))); // NOI18N
 
-        TextoOtroInstitucion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextoOtroInstitucionActionPerformed(evt);
-            }
-        });
+        jPanel2.setBackground(new java.awt.Color(142, 179, 243));
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel11.setText("Otra Institución:");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TextoOtroInstitucion, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextoOtroInstitucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -195,7 +241,7 @@ public class RegistroLAC extends javax.swing.JFrame {
                         .addComponent(ButtonAceptarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(46, 46, 46)
                         .addComponent(ButtonCancelarRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34))
+                        .addGap(78, 78, 78))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -212,32 +258,31 @@ public class RegistroLAC extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 190, Short.MAX_VALUE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel7)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGap(1, 1, 1)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(cbxInstitucionRegistro, 0, 120, Short.MAX_VALUE)
-                                                    .addComponent(TextoOtroInstitucion)))))
+                                                .addComponent(cbxInstitucionRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(31, 31, 31)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(cbxCarreraRegistro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(txtDocuemtoRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(jLabel3)
+                                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(jLabel4)
                                                     .addComponent(txtNombresRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(jLabel5)
                                                     .addComponent(txtApellidosRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(cbxRolRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(0, 118, Short.MAX_VALUE))
-                                            .addComponent(cbxCarreraRegistro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))))
-                .addGap(92, 92, 92))
+                                                    .addComponent(cbxRolRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(0, 0, Short.MAX_VALUE))
+                                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))))
+                .addGap(48, 48, 48))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,19 +304,21 @@ public class RegistroLAC extends javax.swing.JFrame {
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtApellidosRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(41, 41, 41)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(41, 41, 41)
+                                        .addComponent(jLabel6))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel7)
                                             .addComponent(jLabel8))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                             .addComponent(cbxRolRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(cbxInstitucionRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jLabel6))
-                                .addGap(11, 11, 11)
-                                .addComponent(TextoOtroInstitucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(cbxInstitucionRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(26, 26, 26)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -366,7 +413,7 @@ public class RegistroLAC extends javax.swing.JFrame {
                 return;
             }
         }
-        
+        Main.user.otherDepartment = TextoOtroInstitucion.getText();
         Main.db.users.add(Main.user);
         
         try {
@@ -395,11 +442,15 @@ public class RegistroLAC extends javax.swing.JFrame {
 
     private void cbxInstitucionRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxInstitucionRegistroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cbxInstitucionRegistroActionPerformed
 
-    private void TextoOtroInstitucionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextoOtroInstitucionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TextoOtroInstitucionActionPerformed
+        String selectedModel = (String) cbxInstitucionRegistro.getSelectedItem();
+        if (selectedModel.equals("Otro")) {
+            jPanel2.setVisible(true);
+        } else {
+            jPanel2.setVisible(false);
+            TextoOtroInstitucion.setText("");
+        }
+    }//GEN-LAST:event_cbxInstitucionRegistroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -448,6 +499,7 @@ public class RegistroLAC extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxRolRegistro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -457,6 +509,7 @@ public class RegistroLAC extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField txtApellidosRegistro;

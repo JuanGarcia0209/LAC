@@ -27,7 +27,7 @@ public class LoginLAC extends javax.swing.JFrame {
     public LoginLAC() {
         initComponents();
         this.setLocationRelativeTo(null);
-        /*LoginLAC view = this;
+        LoginLAC view = this;
         
         task1 = new TimerTask(){
         public void run() {
@@ -37,7 +37,7 @@ public class LoginLAC extends javax.swing.JFrame {
         }
         };
         timer.schedule(task1, 5000);
-        */
+        
     }
 
     /**
@@ -163,6 +163,8 @@ public class LoginLAC extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAceptarActionPerformed
+        timer.cancel();
+        timer = new Timer();
         if (TxtcomprobarIdentificacion.getText().isEmpty()
                 || validateNumbers(TxtcomprobarIdentificacion.getText()) == false
                 || TxtcomprobarIdentificacion.getText().length() > 10) {
@@ -209,13 +211,15 @@ public class LoginLAC extends javax.swing.JFrame {
 
     private void ButtonAceptar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAceptar1ActionPerformed
         // TODO add your handling code here:
+        timer.cancel();
+        timer = new Timer();
         DBLAC vv = new DBLAC();
         vv.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ButtonAceptar1ActionPerformed
 
     private void TxtcomprobarIdentificacionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TxtcomprobarIdentificacionKeyPressed
-        /*timer.cancel();
+        timer.cancel();
         timer = new Timer();
         
         LoginLAC view = this;
@@ -227,9 +231,11 @@ public class LoginLAC extends javax.swing.JFrame {
         view.dispose();
         }
         };
-        timer.schedule(task1, 5000);
-        */
+        timer.schedule(task1, 10000);
+        
         if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+            timer.cancel();
+            timer = new Timer();
             if (TxtcomprobarIdentificacion.getText().isEmpty()
                 || validateNumbers(TxtcomprobarIdentificacion.getText()) == false
                 || TxtcomprobarIdentificacion.getText().length() > 10) {

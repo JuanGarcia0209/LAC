@@ -1,0 +1,84 @@
+@startuml
+class Answer {
+
+    + int id
+    + int id_user
+    + int id_finality
+    + String otherFinality
+    + int id_pqrs
+    + LocalDateTime created_at
+}
+
+class DB {
+
+    + ArrayList<User> users
+    + ArrayList<Answer> answers
+    + ArrayList<Pqrs> pqrses
+    + String roles[]
+    + String departments[]
+    + String finalities[]
+    + String majors[]
+}
+
+class Department {
+
+    + int id
+    + String name
+}
+
+class Finality {
+
+    + int id
+    + String name
+}
+
+class Major {
+
+    + int id
+    + String name
+}
+
+class Pqrs {
+
+    + int id
+    + String title
+    + String description
+    + int id_usuario
+}
+
+class Rol {
+
+    + int id
+    + String name
+}
+
+class User {
+
+    + int id
+    + int document
+    + String name
+    + String lastName
+    + int id_rol
+    + int id_major
+    + int id_department
+    + String otherDepartment 
+}
+
+User "1" -- "*" Answer : make
+User "1" -- "1" Rol : has
+User "1" -- "1" Major : has
+User "1" -- "1" Department : has
+User "1" -- "*" Pqrs : make
+
+Answer "1" -- "1" Pqrs : has
+Answer "1" -- "*" Finality : has
+
+DB "1" -- "*" Answer : has
+DB "1" -- "*" User : has
+DB "1" -- "*" Pqrs : has
+DB "1" -- "*" Finality : has
+DB "1" -- "*" Department : has
+DB "1" -- "*" Major : has
+DB "1" -- "*" Rol : has
+
+@enduml
