@@ -1,4 +1,4 @@
-/*
+    /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
@@ -118,29 +118,36 @@ public class RegistroLAC extends javax.swing.JFrame {
         setTitle("Library Access Control");
         setType(java.awt.Window.Type.UTILITY);
 
-        jPanel1.setBackground(new java.awt.Color(142, 179, 243));
+        jPanel1.setBackground(new java.awt.Color(227, 238, 239));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/java/com/unicolombo/lac/images/registro.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Algerian", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("REGISTRO DE ASISTENCIAS");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Documento");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("Nombres");
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setText("Apellidos");
 
         txtDocuemtoRegistro.setEditable(false);
+        txtDocuemtoRegistro.setForeground(new java.awt.Color(51, 51, 51));
         txtDocuemtoRegistro.setText(Main.user.document + "");
         txtDocuemtoRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtDocuemtoRegistro.setFocusable(false);
 
+        txtNombresRegistro.setForeground(new java.awt.Color(51, 51, 51));
         txtNombresRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        txtApellidosRegistro.setForeground(new java.awt.Color(51, 51, 51));
         txtApellidosRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         txtApellidosRegistro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,14 +156,18 @@ public class RegistroLAC extends javax.swing.JFrame {
         });
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setText("Institucion");
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
         jLabel8.setText("Rol");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setText("Programa de formación");
 
+        cbxRolRegistro.setForeground(new java.awt.Color(51, 51, 51));
         cbxRolRegistro.setModel(modeloRoles);
         cbxRolRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         cbxRolRegistro.addActionListener(new java.awt.event.ActionListener() {
@@ -165,6 +176,7 @@ public class RegistroLAC extends javax.swing.JFrame {
             }
         });
 
+        cbxInstitucionRegistro.setForeground(new java.awt.Color(51, 51, 51));
         cbxInstitucionRegistro.setModel(modeloDepartments);
         cbxInstitucionRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         cbxInstitucionRegistro.addActionListener(new java.awt.event.ActionListener() {
@@ -173,6 +185,7 @@ public class RegistroLAC extends javax.swing.JFrame {
             }
         });
 
+        cbxCarreraRegistro.setForeground(new java.awt.Color(51, 51, 51));
         cbxCarreraRegistro.setModel(modeloMajors);
         cbxCarreraRegistro.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         cbxCarreraRegistro.setMinimumSize(new java.awt.Dimension(72, 40));
@@ -206,9 +219,11 @@ public class RegistroLAC extends javax.swing.JFrame {
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/java/com/unicolombo/lac/images/lac-single-dark-logo.png"))); // NOI18N
 
-        jPanel2.setBackground(new java.awt.Color(142, 179, 243));
+        jPanel2.setBackground(new java.awt.Color(227, 238, 239));
+        jPanel2.setForeground(new java.awt.Color(51, 51, 51));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
         jLabel11.setText("Otra Institución:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

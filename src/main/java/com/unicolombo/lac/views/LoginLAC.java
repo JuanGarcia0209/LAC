@@ -30,11 +30,11 @@ public class LoginLAC extends javax.swing.JFrame {
         LoginLAC view = this;
         
         task1 = new TimerTask(){
-        public void run() {
-        Welcome vv = new Welcome();
-        vv.setVisible(true);
-        view.dispose();
-        }
+            public void run() {
+                Welcome vv = new Welcome();
+                vv.setVisible(true);
+                view.dispose();
+            }
         };
         timer.schedule(task1, 5000);
         
@@ -87,6 +87,7 @@ public class LoginLAC extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("SimSun", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("Ingrese su documento");
 
         ButtonAceptar1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -98,7 +99,7 @@ public class LoginLAC extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/java/com/unicolombo/lac/images/lac-high-resolution-logo-black-transparent.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/java/com/unicolombo/lac/images/lac-single-dark-logo.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -138,7 +139,7 @@ public class LoginLAC extends javax.swing.JFrame {
                 .addComponent(ButtonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(65, 65, 65)
                 .addComponent(ButtonAceptar1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/java/com/unicolombo/lac/images/uni222.jpeg"))); // NOI18N
@@ -155,8 +156,8 @@ public class LoginLAC extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jLabel3)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();

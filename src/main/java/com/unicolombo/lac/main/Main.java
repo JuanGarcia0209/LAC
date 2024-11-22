@@ -45,5 +45,7 @@ public class Main {
 
         //System.out.println(db.users.get(0).document);
         Welcome.main(args);
+        
+        System.out.println(DBController.path());
     }
 }
